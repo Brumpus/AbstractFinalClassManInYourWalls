@@ -99,15 +99,6 @@ public class Sort {
 		}
 	}
 
-	// Grab node at front of list
-	// Create a new list with all elements <= node
-	// Create a new list with all elements > node
-
-	// return left list -> node -> right list
-
-	// leftList.addToRear(node.first())
-	// node.addToRear(rightList.first())
-
 	/**
 	 * Quicksort algorithm to sort objects in a list
 	 * that implements the IndexedUnsortedList interface,
@@ -123,7 +114,7 @@ public class Sort {
 	 */
 	private static <E> void quicksort(IndexedUnsortedList<E> list, Comparator<E> c) {
 		// TODO: Implement recursive quicksort algorithm using Comparator
-				if (list.size() <= 1)
+		if (list.size() <= 1)
 			return;
 
 		E pivot = list.removeFirst();
@@ -141,13 +132,13 @@ public class Sort {
 			}
 		}
 
-		quicksort(leftList,c);
-		quicksort(rightList,c);
+		quicksort(leftList, c);
+		quicksort(rightList, c);
 
 		while (!leftList.isEmpty()) {
 			list.add(leftList.removeFirst());
 		}
-		
+
 		list.add(pivot);
 
 		while (!rightList.isEmpty()) {
